@@ -13,7 +13,7 @@
 
 Route::get('/', function()
 {
-	return View::make('home');
+	return View::make('hello');
 });
 
 Route::get('/signout', array(

@@ -20,41 +20,11 @@
                 }
             @show
         </style>
-       
-        
+
+
     </head>
 
     <body>
-        <!-- Navbar -->
-        <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-
-                    <a class="navbar-brand" href="">Laravel Starter</a>
-                </div>
-                <!-- Everything you want hidden at 940px or less, place within here -->
-                <div class="collapse navbar-collapse">
-                   <ul class="nav navbar-nav">
-                        <li><a href="{{{ URL::to('') }}}">Home</a></li>
-                        @if ( Auth::guest() )
-                            <li>{{ HTML::link('signin', 'Sign In') }}</li>
-                            <li>{{ HTML::link('create', 'Create Account') }}</li>
-                        @else
-                            <li>{{ HTML::link('signout', 'Sign Out') }}</li>
-                        @endif
-                    </ul> 
-                </div>
-
-                
-            </div>
-        </div> 
-
         <!-- Container -->
         <div class="container">
             @if ($message = Session::get('success'))
