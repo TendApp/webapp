@@ -13,17 +13,10 @@ Configure
 
 To use this project, you will need to first install Composer & Laravel.
     This guide will help you with the set-up of laravel and composer: http://laravel.com/docs/4.2/installation
-    
-    
-After you have installed both Laravel and Composer, you will now want to clone this repo.
 
-`git clone https://github.com/cpiggott/laravel_start.git`
+Navigate into the `webapp/starter` directory/folder and run the following command:
 
-Navigate into the `laravel_starter/starter` directory/folder and run the following command:
-
-`$ php artisan key:generate` - This step is important!!! This resets the project key so that you can deploy.
-
-At this point I would recommend opening the entire project in your favorite editor, Sublime Text has an open folder option that works fell for projects like this, using their open folder option at the root of the project. http://www.sublimetext.com/
+`composer update` and then `composer install`
 
 Once you have done this, you will now want to set-up a connection to your database.
 
@@ -31,7 +24,8 @@ Using your text editor, open up the file `/app/config/database.php`
 
 Here you will see the connection string for your database. I specifically used MySQL, you will want to change the MySQL connection information to suit your specific need. This can be seen at lines 55-64. 
 
-`'mysql' => array(
+`
+'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => '127.0.0.1',
 			'database'  => 'starter',
@@ -50,7 +44,8 @@ Once you have configured your MySQL Database, we will need to run a migration to
 
 Check the file  `../app/database/migrations/2015_01_04_085421_create_users_table.php` exists and looks like the file below.
 
-`<?php
+`
+<?php
 
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
@@ -84,7 +79,9 @@ class CreateUsersTable extends Migration {
     {
         Schema::drop('users');
     }
-}`
+}
+
+`
 
 Once this is done, we will want to run the migration. This is done using the following command at the root of the application. `php artisan migrate`
 More info about migrations can be found at: http://laravel.com/docs/4.2/migrations
